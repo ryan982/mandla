@@ -1,0 +1,283 @@
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>Ekagra</title>
+	<style src = '{% static "style.css" %}'></style>
+	<style>
+		#slideshow {
+			position:relative;
+			height:400px;
+		}
+		#slideshow DIV {
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:8;
+			opacity:0.0;
+			height: 400px;
+			background-color: #FFF;
+		}
+		#slideshow DIV.active {
+			z-index:10;
+			opacity:1.0;
+		}
+		#slideshow DIV.last-active {
+			z-index:9;
+		}
+		#slideshow DIV IMG {
+			height: 350px;
+			display: block;
+			border: 0;
+			margin-bottom: 10px;
+		}
+		#id_email, #id_subject, #id_detail{
+			width: 100%;
+			margin-bottom: 20px;
+			 
+		}
+		.label {
+			margin-bottom: 10px;
+		}
+		#id_detail{
+			height: 100px;
+		}
+		.my-form{
+			/* background-color:blueviolet; */
+			margin-left: 15%;
+			margin-right: 15%;
+			margin-bottom: 50px;
+			margin-top: 50px;
+		}
+		.float-container {
+			
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+			justify-content: space-evenly;
+
+		}
+		
+
+		.float-child {			
+			height: fit-content;
+			margin: 5px;
+		} 
+		.topnav {
+			overflow: hidden;
+			background-color: #333;
+			position: relative;
+		  }
+		
+		  .topnav #myLinks {
+			display: none;
+		  }
+		
+		  .topnav a {
+			float: left;
+			color: white;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		  }
+		  .active {
+			/* background-color: #4CAF50; */
+			color: white;
+		  }
+		
+		  .topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		  }
+		
+		
+		
+		  body {
+			font-family: Arial, Helvetica, sans-serif;
+		  }
+		
+		  .mobile-container {
+			max-width: 480px;
+			margin: auto;
+			background-color: #555;
+			height: 500px;
+			color: white;
+			border-radius: 10px;
+		  }
+		
+		  .topnav {
+			overflow: hidden;
+			background-color: #333;
+			position: relative;
+		  }
+		
+		  .topnav #myLinks {
+			display: none;
+		  }
+		
+		  .topnav a {
+			float: left;
+			color: white;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		  }
+		
+		  .topnav a.icon {
+			float: right;
+		  }
+		
+		  .topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		  }
+		
+		  .active {
+			/* background-color: #4CAF50; */
+			color: white;
+		  }
+		.friends{
+		  margin-top: 100px;
+		}
+		.prod-desc{
+			text-align: center;
+		}
+		.buy-button{
+			width: auto;
+			
+		}
+		.btn{
+			margin-left: auto;
+			
+			margin-right: auto;
+			
+		}
+		
+		.prod-head{
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+		@media screen and (max-width:480px){
+			.container-2{
+				margin-top: -45px;
+			}
+			.card{
+				margin-bottom: 20px;
+			}
+			.carousel-control-prev, .carousel-control-next{
+				opacity: 0;
+				visibility: hidden;
+			}
+			#myLinks{
+				margin-left: 15px;
+			}
+			.row{
+				margin-top: -100px;
+			}
+			.my-form{
+				margin-top: 50px;
+			}
+			.row{
+				margin-top: 50px;
+				display: flex;
+				flex-direction: column;
+			}
+			.col-4{
+				width: 100%;
+				margin-bottom: 50px;
+				max-width: 100%;
+
+			}
+		}
+		.responsive:hover{
+			cursor: pointer;
+		}
+		.responsive{
+			margin-top: 10px;
+		}
+		.d-block{
+			margin-bottom: 10px;
+		}
+		
+		
+		.tooltip {
+		  position: relative;
+		  display: inline-block;
+		}
+		
+		.tooltip .tooltiptext {
+		  visibility: hidden;
+		  width: 140px;
+		  background-color: #555;
+		  color: #fff;
+		  text-align: center;
+		  border-radius: 6px;
+		  padding: 5px;
+		  position: absolute;
+		  z-index: 1;
+		  bottom: 150%;
+		  left: 50%;
+		  margin-left: -75px;
+		  opacity: 0;
+		  transition: opacity 0.3s;
+		}
+		
+		.tooltip .tooltiptext::after {
+		  content: "";
+		  position: absolute;
+		  top: 100%;
+		  left: 50%;
+		  margin-left: -5px;
+		  border-width: 5px;
+		  border-style: solid;
+		  border-color: #555 transparent transparent transparent;
+		}
+		
+		.tooltip:hover .tooltiptext {
+		  visibility: visible;
+		  opacity: 1;
+		}
+		
+</style>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="#">Ekagra</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+  
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item active">
+		  <a class="nav-link" href="#">Products <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
+		  </li>		
+	  </ul>
+	</div>
+  </nav>
+</head>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>
